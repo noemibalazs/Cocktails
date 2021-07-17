@@ -2,7 +2,6 @@ package com.noemi.android.cocktails
 
 import android.os.Build
 import com.noemi.android.cocktails.api.model.Cocktail
-import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Test
