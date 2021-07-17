@@ -9,12 +9,15 @@ To do: Design and implement and application using the https://www.thecocktaildb.
 
 Libraries:
 
-Dagger2 DI
-Retrofit
-Room
-Data Binding
-MVVM architecture
-Material design
+1. Dagger2 DI
+2. Retrofit
+3. Room
+4. Data Binding
+5. MVVM architecture
+6. Material design
+7. Espresso
+8. Robolectric
+9. Mockito
 
 Screenshots:
 
