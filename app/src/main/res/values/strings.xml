@@ -8,4 +8,5 @@
     <string name="txt_ingredients">Ingredients: %s - %s - %s</string>
     <string name="txt_default_error">An error has occurred!</string>
     <string name="txt_try_it_again">Your cocktails are missing, try it again with a different name!</string>
+    <string name="txt_cocktail_added_to_data_base">Cocktail was added to database!</string>
 </resources>

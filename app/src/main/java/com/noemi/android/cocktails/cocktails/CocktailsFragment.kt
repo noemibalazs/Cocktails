@@ -18,7 +18,7 @@ import com.noemi.android.cocktails.databinding.FragmentCocktailsBinding
 import com.noemi.android.cocktails.details.CocktailDetailsActivity
 import com.noemi.android.cocktails.mapper.Mapper
 import com.noemi.android.cocktails.preferences.PreferencesRepository
-import com.noemi.android.cocktails.util.showErrorToastToUser
+import com.noemi.android.cocktails.util.showToastToUser
 import com.noemi.android.cocktails.viewModel.CocktailViewModel
 import javax.inject.Inject
 
@@ -42,6 +42,7 @@ class CocktailsFragment : Fragment() {
     private val cocktailListener: CocktailListener = {
         val cocktailEntity = mapper.mapCocktailsToEntity(it)
         viewModel.addCocktailToDB(cocktailEntity)
+        requireContext().showToastToUser(getString(R.string.txt_cocktail_added_to_data_base))
     }
 
     private val cocktailLaunchListener: CocktailLaunchListener = {
@@ -72,6 +73,7 @@ class CocktailsFragment : Fragment() {
 
         initBinding()
         initObservers()
+        viewModel.loadDefaultCocktails()
     }
 
     private fun initBinding() {
@@ -93,7 +95,7 @@ class CocktailsFragment : Fragment() {
         })
 
         viewModel.errorEvent.observe(viewLifecycleOwner, {
-            requireContext().showErrorToastToUser(it)
+            requireContext().showToastToUser(it)
         })
 
         viewModel.onSearchClickEvent.observe(viewLifecycleOwner, { event ->
@@ -106,12 +108,12 @@ class CocktailsFragment : Fragment() {
         })
 
         viewModel.cocktailNameLengthError.observe(viewLifecycleOwner, {
-            requireContext().showErrorToastToUser(it)
+            requireContext().showToastToUser(it)
         })
 
         viewModel.emptySearchObserver.observe(viewLifecycleOwner, { empty ->
             if (empty)
-                requireContext().showErrorToastToUser(getString(R.string.txt_try_it_again))
+                requireContext().showToastToUser(getString(R.string.txt_try_it_again))
         })
     }
 
@@ -125,6 +127,7 @@ class CocktailsFragment : Fragment() {
                 else -> {
                     viewModel.cocktailNameLengthError.value =
                         getString(R.string.txt_search_error_toast)
+                    clearCocktailName()
                 }
             }
 

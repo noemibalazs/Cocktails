@@ -12,7 +12,7 @@ import com.noemi.android.cocktails.app.App
 import com.noemi.android.cocktails.databinding.ActivityCocktailDetailsBinding
 import com.noemi.android.cocktails.preferences.PreferencesRepository
 import com.noemi.android.cocktails.room.CocktailEntity
-import com.noemi.android.cocktails.util.showErrorToastToUser
+import com.noemi.android.cocktails.util.showToastToUser
 import com.noemi.android.cocktails.viewModel.CocktailViewModel
 import javax.inject.Inject
 
@@ -54,7 +54,7 @@ class CocktailDetailsActivity : AppCompatActivity() {
         })
 
         cocktailViewModel.errorEvent.observe(this, {
-            showErrorToastToUser(it)
+            showToastToUser(it)
         })
 
         cocktailViewModel.progressEvent.observe(this, {

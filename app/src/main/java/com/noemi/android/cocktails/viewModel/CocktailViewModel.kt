@@ -34,11 +34,7 @@ class CocktailViewModel @Inject constructor(
     val localCocktailsObserver = MutableLiveData<MutableList<Cocktail>>()
     val emptySearchObserver = MutableLiveData<Boolean>()
 
-    init {
-        loadDefaultCocktails()
-    }
-
-    private fun loadDefaultCocktails() {
+    fun loadDefaultCocktails() {
         Log.d(TAG, "loadDefaultCocktails()")
         compositeDisposable.clear()
         val disposable = cocktailRemoteService.getCocktails()
