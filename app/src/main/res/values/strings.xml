@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cocktails</string>
+    <string name="txt_cocktail_details_title">Cocktail Details</string>
+    <string name="txt_favorite_title">Favorite</string>
+    <string name="txt_search_for_cocktails_hint">Search cocktails by name</string>
+    <string name="txt_search_error_toast">The searched text length should be at least 3 characters!</string>
+    <string name="txt_category">Category: %s</string>
+    <string name="txt_ingredients">Ingredients: %s - %s - %s</string>
+    <string name="txt_default_error">An error has occurred!</string>
+    <string name="txt_try_it_again">Your cocktails are missing, try it again with a different name!</string>
+</resources>

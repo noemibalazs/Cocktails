@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_medium">12dp</dimen>
+    <dimen name="margin_dimen">20dp</dimen>
+    <dimen name="margin_huge">40dp</dimen>
+    <dimen name="done_height_width">48dp</dimen>
+    <dimen name="pb_size">70dp</dimen>
+</resources>
