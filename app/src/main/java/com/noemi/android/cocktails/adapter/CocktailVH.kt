@@ -1,17 +1,20 @@
 package com.noemi.android.cocktails.adapter
 
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.noemi.android.cocktails.R
 import com.noemi.android.cocktails.api.model.Cocktail
 import com.noemi.android.cocktails.databinding.ItemCocktailBinding
+import com.noemi.android.cocktails.util.CocktailAvatarHide
 import com.noemi.android.cocktails.util.OnTimeClickListener
 
 class CocktailVH(
     private val binding: ItemCocktailBinding,
     private val cocktailListener: CocktailListener?,
-    private val cocktailLaunchListener: CocktailLaunchListener?
+    private val cocktailLaunchListener: CocktailLaunchListener?,
+    private val cocktailAvatarHide: CocktailAvatarHide
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bindCocktail(cocktail: Cocktail) {
@@ -36,6 +39,10 @@ class CocktailVH(
                     cocktailLaunchListener?.invoke(cocktail)
                 }
             })
+
+            if (cocktailAvatarHide.hide) {
+                ivFavorite.isVisible = !cocktailAvatarHide.hide
+            }
         }
     }
 }

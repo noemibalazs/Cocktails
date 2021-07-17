@@ -18,6 +18,7 @@ import com.noemi.android.cocktails.databinding.FragmentCocktailsBinding
 import com.noemi.android.cocktails.details.CocktailDetailsActivity
 import com.noemi.android.cocktails.mapper.Mapper
 import com.noemi.android.cocktails.preferences.PreferencesRepository
+import com.noemi.android.cocktails.util.CocktailAvatarHide
 import com.noemi.android.cocktails.util.showToastToUser
 import com.noemi.android.cocktails.viewModel.CocktailViewModel
 import javax.inject.Inject
@@ -34,9 +35,10 @@ class CocktailsFragment : Fragment() {
     lateinit var mapper: Mapper
 
     private lateinit var binding: FragmentCocktailsBinding
+    private val avatarHide = CocktailAvatarHide(hide = false)
 
     private val cocktailsAdapter: CocktailsAdapter by lazy {
-        CocktailsAdapter(cocktailListener, cocktailLaunchListener)
+        CocktailsAdapter(cocktailListener, cocktailLaunchListener, avatarHide)
     }
 
     private val cocktailListener: CocktailListener = {
